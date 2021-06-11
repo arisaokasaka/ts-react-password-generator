@@ -21,7 +21,7 @@ const SettingItem: React.FC<Props> = ({ title, onOff, handleClick }) => {
   const classNamesOfButton: ClassNameOfButton = {
     background: {
       default: 'block w-14 h-8 rounded-2xl relative cursor-pointer ',
-      on: 'bg-indigo-600 justify-content-end',
+      on: 'bg-blue-700 justify-content-end',
       off: 'bg-gray-800',
     },
     circle: {
@@ -33,9 +33,7 @@ const SettingItem: React.FC<Props> = ({ title, onOff, handleClick }) => {
   }
 
   return (
-    <div
-      className="bg-gray-700 h-12 mb-2 px-2 flex justify-between items-center rounded"
-      onClick={handleClick}>
+    <div className="bg-gray-700 h-12 mb-2 px-2 flex justify-between items-center rounded">
       <a>{title}</a>
       <span
         className={
@@ -44,7 +42,8 @@ const SettingItem: React.FC<Props> = ({ title, onOff, handleClick }) => {
               classNamesOfButton.background.on
             : classNamesOfButton.background.default +
               classNamesOfButton.background.off
-        }>
+        }
+        onClick={handleClick}>
         <span
           className={
             onOff
